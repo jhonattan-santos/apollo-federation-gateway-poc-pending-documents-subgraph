@@ -7,11 +7,11 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AccountModule } from './services/account/account.module';
+import { PendingDocumentsModule } from './services/pending-documents/pending-documents.module';
 
 @Module({
   imports: [
-    AccountModule,
+    PendingDocumentsModule,
     GraphQLModule.forRoot<ApolloFederationDriverConfig>({
       driver: ApolloFederationDriver,
       autoSchemaFile: 'schema.gql',

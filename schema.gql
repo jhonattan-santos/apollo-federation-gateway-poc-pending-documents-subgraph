@@ -22,28 +22,16 @@ directive @inaccessible on FIELD_DEFINITION | OBJECT | INTERFACE | UNION | ARGUM
 
 directive @override(from: String!) on FIELD_DEFINITION
 
-type Employee {
-  id: ID!
-  name: String
-  agency: String
-  email: String
-  role: [String!]
-  creationDate: String
-}
-
-type Account {
+type PendingDocument {
   id: ID
   name: String
-  agency: String
-  employeeId: String
-  balance: String
-  employee: Employee
+  customerId: ID
   creationDate: String
 }
 
 type Query {
-  account(id: String!): [Account!]!
-  accounts: [Account!]!
+  pendingDocuments(id: String!): [PendingDocument!]!
+  allPendingDocuments: [PendingDocument!]!
 }
 
 scalar link__Import
